@@ -3,7 +3,8 @@ import '../styles/App.css';
 
 const App = () => {
 //code here 
-  const [setColor] = useState("red");
+const [setColor] = useState("red");
+
   return (
     <div id="main">
       <p className={'redColor'} >Newton School</p>
