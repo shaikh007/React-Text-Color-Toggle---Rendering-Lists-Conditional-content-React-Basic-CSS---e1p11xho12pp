@@ -3,12 +3,11 @@ import '../styles/App.css';
 
 const App = () => {
 //code here 
-const [setColor] = useState("red");
-
+  const [active,setActive]=useState(true);
   return (
     <div id="main">
-      <p className={'redColor'} >Newton School</p>
-      <button id='button' onClick={() => setColor('blue')}>Change Style</button>
+      <p className={active?"redColor":"blueColor"}>Newton School</p>
+      <button id='button' onClick={()=>setActive(!active)}>Change Style</button>
     </div>
   )
 }
