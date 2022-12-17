@@ -1,17 +1,34 @@
-import React, {useEffect, useState} from 'react'
-import '../styles/App.css';
+import React, { useEffect, useState } from "react";
+import "../styles/App.css";
 
 const App = () => {
-//code here 
-  const [color,setColor] = useState("redColor");
-  // const [setColor1] = useState("blue");
+  //code here
+  const [value, setValue] = useState(true);
+
+  const [className, setClassName] = useState("redColor");
+
+  const onButtonClick = () => {
+    setValue(!value);
+  };
+
+  useEffect(() => {
+    if (value) {
+      setClassName("redColor");
+    }
+
+    if (!value) {
+      setClassName("blueColor");
+    }
+  }, [value]);
+
   return (
     <div id="main">
-      <p className={color} >Newton School</p>
-      <button id='button' onClick={() => setColor('blueColor')}>Change Style</button>
+      <p className={className}>Newton School</p>
+      <button id="button" onClick={onButtonClick}>
+        Change Style
+      </button>
     </div>
-  )
-}
-
+  );
+};
 
 export default App;
